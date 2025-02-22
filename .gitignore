@@ -4,3 +4,5 @@ ProxyRotation/.vs/
 ProxyRotation/bin/
 
 ProxyRotation/obj/
+
+*.tmp

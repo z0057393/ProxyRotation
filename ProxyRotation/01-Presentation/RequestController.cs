@@ -1,10 +1,11 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using ProxyRotation.Application.Interface;
 
 namespace ProxyRotation.Presentation
 {
     [ApiController]
     [Route("/Request")]
-    public class RequestController : ControllerBase
+    public class RequestController(IProxyRotationService _proxyRotationService) : ControllerBase
     {
         [HttpGet]
         [Route("/alive")]
@@ -16,8 +17,9 @@ namespace ProxyRotation.Presentation
 
         [HttpPost]
         [Route("/")]
-        public IActionResult Rotate()
+        public IActionResult DoRotation()
         {
+            _proxyRotationService.Rotate();
             return Ok();
         }
     }
