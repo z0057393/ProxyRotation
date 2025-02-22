@@ -12,5 +12,13 @@ namespace ProxyRotation.Presentation
         {
             return Ok("I'm alive boss");
         }
+
+
+        [HttpPost]
+        [Route("/")]
+        public IActionResult Rotate()
+        {
+            return Ok();
+        }
     }
 } 
