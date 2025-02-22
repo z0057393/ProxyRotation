@@ -6,3 +6,5 @@ ProxyRotation/bin/
 ProxyRotation/obj/
 
 *.tmp
+
+*.csproj
