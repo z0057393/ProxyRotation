@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using ProxyRotation._01_Presentation.Dto;
 using ProxyRotation.Application.Interface;
 
 namespace ProxyRotation.Presentation
@@ -17,7 +18,7 @@ namespace ProxyRotation.Presentation
 
         [HttpPost]
         [Route("/")]
-        public IActionResult DoRotation()
+        public IActionResult DoRotation([FromBody] RequestDto req)
         {
             _proxyRotationService.Rotate();
             return Ok();
