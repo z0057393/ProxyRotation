@@ -9,7 +9,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d135166d-91ad-46a2-a28b-a8628686e955" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.ProxyRotation/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ProxyRotation/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/04-Domain/Manager/ProxyManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/04-Domain/Manager/ProxyManager.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -118,24 +117,5 @@
   <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/04-Domain/Manager/ProxyManager.cs</url>
-          <line>32</line>
-          <properties documentPath="$PROJECT_DIR$/04-Domain/Manager/ProxyManager.cs" containingFunctionPresentation="Method 'CheckProxyCollection'">
-            <startOffsets>
-              <option value="837" />
-            </startOffsets>
-            <endOffsets>
-              <option value="868" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="31" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>
