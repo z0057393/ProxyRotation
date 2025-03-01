@@ -9,15 +9,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d135166d-91ad-46a2-a28b-a8628686e955" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/02-Infrastructure/Dtos/Proxies/Proxy.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/02-Infrastructure/Dtos/Proxies/ProxyCollection.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/02-Infrastructure/Interface/IScraperManager.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/02-Infrastructure/Manager/ScraperManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ProxyRotation/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ProxyRotation/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/02-Infrastructure/Interface/IScraperService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/02-Infrastructure/Interface/IScraperService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/02-Infrastructure/Service/ScraperService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/02-Infrastructure/Service/ScraperService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/03-Application/Service/ProxyRotationService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/03-Application/Service/ProxyRotationService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Program.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,6 +23,11 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/01-Presentation/Controller/RequestController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/02-Infrastructure/Interface/IScraperService.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/02-Infrastructure/Service/ScraperService.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/03-Application/Service/ProxyRotationService.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Program.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/29ea32a76b2a6b8eb246f247df6a6a86d887384b4c31db2a35effccdd86c24/JsonSerializerInternalReader.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/7d81b2d4f22bee75e5438c707251ae43cb0974c207db91ffc159118c84b4eb9/ServiceProvider.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
@@ -55,7 +52,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "XThreadsFramesViewSplitterKey": "0.5193133",
-    "git-widget-placeholder": "get-ip-proxy",
+    "git-widget-placeholder": "main",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -108,7 +105,7 @@
       <workItem from="1740679166593" duration="15000" />
       <workItem from="1740679196438" duration="280000" />
       <workItem from="1740679484633" duration="1005000" />
-      <workItem from="1740833327518" duration="3343000" />
+      <workItem from="1740833327518" duration="4293000" />
     </task>
     <servers />
   </component>
