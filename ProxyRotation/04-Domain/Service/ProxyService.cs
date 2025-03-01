@@ -1,15 +1,15 @@
 ﻿using ProxyRotation.Domain.Interface;
+using ProxyRotation.Infrastructure.Dtos.Proxies;
 
 namespace ProxyRotation.Domain.Service
 {
-    public class ProxyService : IProxyService
+    public class ProxyService (IProxyManager _proxyManager): IProxyService
     {
-        public void Rotate()
+        public void Validate(ProxyCollection proxyCollection)
         {
-            throw new NotImplementedException();
+            _proxyManager.Validate(proxyCollection);
         }
-
-        public void Validate()
+        public void Rotate()
         {
             throw new NotImplementedException();
         }

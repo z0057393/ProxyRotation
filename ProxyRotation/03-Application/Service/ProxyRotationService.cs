@@ -14,8 +14,8 @@ namespace ProxyRotation.Application.Service
     {
         public void Rotate()
         {
-            ProxyCollection collection = _scraperService.Scrape();
-            // _proxyService.Validate();
+            ProxyCollection proxyCollection = _scraperService.Scrape();
+            _proxyService.Validate(proxyCollection);
             // _proxyService.Rotate();
         }
     }
