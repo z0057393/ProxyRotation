@@ -11,34 +11,33 @@ public class ProxyManager : IProxyManager
     public ProxyCollection Validate(ProxyCollection proxyCollection)
     {
         return CheckProxyCollection(proxyCollection);
-    } 
+    }
 
     #endregion
-    
+
 
     #region PRIVATE METHOD
-    
+
+    //Super lent, surement un pb
     private ProxyCollection CheckProxyCollection(ProxyCollection proxyCollection)
     {
         ProxyCollection proxyCollectionFiltered = new();
         foreach (Proxy proxy in proxyCollection.Proxies)
         {
-            if (proxy.Protocols[0].Equals("http"))
+            if (IsProxyWorkingAsync(proxy).GetAwaiter().GetResult())
             {
-                if (IsProxyWorkingAsync(proxy).GetAwaiter().GetResult())
-                {
-                    AddProxyInCollection(proxyCollectionFiltered, proxy);
-                }; 
+                AddProxyInCollection(proxyCollectionFiltered, proxy);
             }
-            
         }
+
         return proxyCollectionFiltered;
     }
+
     private async Task<bool> IsProxyWorkingAsync(Proxy proxy)
     {
         using (var client = new HttpClient(InitHandler(proxy)))
         {
-            client.Timeout = TimeSpan.FromSeconds(1);
+            // client.Timeout = TimeSpan.FromSeconds(1);
             try
             {
                 var response = await client.GetAsync("https://www.google.com");
@@ -69,11 +68,11 @@ public class ProxyManager : IProxyManager
     {
         return response.IsSuccessStatusCode ? true : false;
     }
-    
+
     private void AddProxyInCollection(ProxyCollection proxyCollection, Proxy proxy)
     {
         proxyCollection.Proxies.Add(proxy);
     }
-    
+
     #endregion
 }

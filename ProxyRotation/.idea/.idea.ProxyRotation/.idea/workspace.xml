@@ -9,14 +9,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d135166d-91ad-46a2-a28b-a8628686e955" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/04-Domain/Interface/IProxyManager.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/04-Domain/Manager/ProxyManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ProxyRotation/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ProxyRotation/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/03-Application/Service/ProxyRotationService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/03-Application/Service/ProxyRotationService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/04-Domain/Interface/IProxyService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/04-Domain/Interface/IProxyService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/04-Domain/Service/ProxyService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/04-Domain/Service/ProxyService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProxyRotation.sln.DotSettings.user" beforeDir="false" afterPath="$PROJECT_DIR$/ProxyRotation.sln.DotSettings.user" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02-Infrastructure/Dtos/Proxies/Proxy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/02-Infrastructure/Dtos/Proxies/Proxy.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02-Infrastructure/Dtos/Proxies/ProxyCollection.cs" beforeDir="false" afterPath="$PROJECT_DIR$/02-Infrastructure/Dtos/Proxies/ProxyCollection.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02-Infrastructure/Manager/ScraperManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/02-Infrastructure/Manager/ScraperManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/04-Domain/Manager/ProxyManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/04-Domain/Manager/ProxyManager.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -114,7 +111,7 @@
       <workItem from="1740679166593" duration="15000" />
       <workItem from="1740679196438" duration="280000" />
       <workItem from="1740679484633" duration="1005000" />
-      <workItem from="1740833327518" duration="9127000" />
+      <workItem from="1740833327518" duration="12777000" />
     </task>
     <servers />
   </component>
@@ -124,24 +121,5 @@
   <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/04-Domain/Manager/ProxyManager.cs</url>
-          <line>69</line>
-          <properties documentPath="$PROJECT_DIR$/04-Domain/Manager/ProxyManager.cs" containingFunctionPresentation="Method 'ControlResponse'">
-            <startOffsets>
-              <option value="1840" />
-            </startOffsets>
-            <endOffsets>
-              <option value="1891" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="12" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

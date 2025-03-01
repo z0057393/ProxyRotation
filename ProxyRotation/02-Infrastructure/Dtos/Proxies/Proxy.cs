@@ -8,11 +8,8 @@ public class Proxy
     public string Ip { get; set; }
 
     [JsonProperty("port")]
-    public int Port { get; set; }
-
-    [JsonProperty("country")]
-    public string Country { get; set; }
-
-    [JsonProperty("protocols")]
-    public List<string> Protocols { get; set; }
+    public string Port { get; set; }
+    
+    [JsonProperty("protocol")]
+    public string Protocol { get; set; }
 }
