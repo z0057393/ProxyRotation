@@ -3,6 +3,7 @@ using ProxyRotation.Application.Service;
 using ProxyRotation.Domain.Interface;
 using ProxyRotation.Domain.Service;
 using ProxyRotation.Infrastructure.Interface;
+using ProxyRotation.Infrastructure.Manager;
 using ProxyRotation.Infrastructure.Service;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -18,6 +19,7 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddTransient<IProxyRotationService, ProxyRotationService>();
 builder.Services.AddTransient<IProxyService, ProxyService>();
 builder.Services.AddTransient<IScraperService, ScraperService>();
+builder.Services.AddTransient<IScraperManager, ScraperManager>();
 builder.Services.AddSingleton<ILoadConfigurationService, LoadConfigurationService>();
 
 

@@ -1,7 +1,9 @@
-﻿namespace ProxyRotation.Infrastructure.Interface
+﻿using ProxyRotation.Infrastructure.Dtos.Proxies;
+
+namespace ProxyRotation.Infrastructure.Interface
 {
     public interface IScraperService
     {
-        void Scrape();
+        ProxyCollection Scrape();
     }
 }
