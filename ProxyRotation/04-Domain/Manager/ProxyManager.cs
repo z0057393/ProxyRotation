@@ -1,3 +1,4 @@
+using System.Net.NetworkInformation;
 using System.Text;
 using ProxyRotation.Domain.Interface;
 using ProxyRotation.Infrastructure.Dtos.Proxies;
@@ -24,49 +25,31 @@ public class ProxyManager : IProxyManager
         ProxyCollection proxyCollectionFiltered = new();
         foreach (Proxy proxy in proxyCollection.Proxies)
         {
-            if (IsProxyWorkingAsync(proxy).GetAwaiter().GetResult())
+            if (IsProxyWorking(proxy))
             {
                 AddProxyInCollection(proxyCollectionFiltered, proxy);
             }
         }
-
         return proxyCollectionFiltered;
     }
 
-    private async Task<bool> IsProxyWorkingAsync(Proxy proxy)
+    private  bool IsProxyWorking(Proxy proxy)
     {
-        using (var client = new HttpClient(InitHandler(proxy)))
+        Ping ping = new Ping();
+        try
         {
-            // client.Timeout = TimeSpan.FromSeconds(1);
-            try
-            {
-                var response = await client.GetAsync("https://www.google.com");
-                return ControlResponse(response);
-            }
-            catch (Exception e)
-            {
-                return false;
-            }
+            PingReply reply = ping.Send(BuildProxyAddress(proxy), 2000);
+            if (reply == null) return false;
+            return true;
+        }
+        catch (PingException e)
+        {
+            return false;
         }
     }
-
-    private HttpClientHandler InitHandler(Proxy proxy)
-    {
-        return new HttpClientHandler
-        {
-            Proxy = new System.Net.WebProxy(BuildProxyAddress(proxy)),
-            UseProxy = true
-        };
-    }
-
     private string BuildProxyAddress(Proxy proxy)
     {
-        return proxy.Ip + ":" + proxy.Port;
-    }
-
-    private bool ControlResponse(HttpResponseMessage response)
-    {
-        return response.IsSuccessStatusCode ? true : false;
+        return proxy.Ip ;
     }
 
     private void AddProxyInCollection(ProxyCollection proxyCollection, Proxy proxy)

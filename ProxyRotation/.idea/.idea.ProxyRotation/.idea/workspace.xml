@@ -10,9 +10,6 @@
   <component name="ChangeListManager">
     <list default="true" id="d135166d-91ad-46a2-a28b-a8628686e955" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ProxyRotation/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ProxyRotation/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/02-Infrastructure/Dtos/Proxies/Proxy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/02-Infrastructure/Dtos/Proxies/Proxy.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/02-Infrastructure/Dtos/Proxies/ProxyCollection.cs" beforeDir="false" afterPath="$PROJECT_DIR$/02-Infrastructure/Dtos/Proxies/ProxyCollection.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/02-Infrastructure/Manager/ScraperManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/02-Infrastructure/Manager/ScraperManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/04-Domain/Manager/ProxyManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/04-Domain/Manager/ProxyManager.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -51,23 +48,23 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    ".NET Launch Settings Profile.ProxyRotation: http.executor": "Debug",
-    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "XThreadsFramesViewSplitterKey": "0.5193133",
-    "git-widget-placeholder": "Validate",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.environmentSetup",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;.NET Launch Settings Profile.ProxyRotation: http.executor&quot;: &quot;Debug&quot;,
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;XThreadsFramesViewSplitterKey&quot;: &quot;0.5193133&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;Validate&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.environmentSetup&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected=".NET Launch Settings Profile.ProxyRotation: http">
     <configuration name="ProxyRotation: http" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
       <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/ProxyRotation.csproj" />
@@ -121,5 +118,24 @@
   <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/04-Domain/Manager/ProxyManager.cs</url>
+          <line>32</line>
+          <properties documentPath="$PROJECT_DIR$/04-Domain/Manager/ProxyManager.cs" containingFunctionPresentation="Method 'CheckProxyCollection'">
+            <startOffsets>
+              <option value="837" />
+            </startOffsets>
+            <endOffsets>
+              <option value="868" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="31" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
