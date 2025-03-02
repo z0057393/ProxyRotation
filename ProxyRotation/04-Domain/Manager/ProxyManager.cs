@@ -1,3 +1,4 @@
+using System.Diagnostics;
 using System.Net.NetworkInformation;
 using System.Text;
 using ProxyRotation.Domain.Interface;
@@ -11,7 +12,7 @@ public class ProxyManager : IProxyManager
 
     public ProxyCollection Validate(ProxyCollection proxyCollection)
     {
-        return CheckProxyCollection(proxyCollection);
+        return CheckProxyCollection(proxyCollection).GetAwaiter().GetResult();
     }
 
     #endregion
@@ -20,16 +21,20 @@ public class ProxyManager : IProxyManager
     #region PRIVATE METHOD
 
     //Super lent, surement un pb
-    private ProxyCollection CheckProxyCollection(ProxyCollection proxyCollection)
+    private async Task<ProxyCollection> CheckProxyCollection(ProxyCollection proxyCollection)
     {
         ProxyCollection proxyCollectionFiltered = new();
-        foreach (Proxy proxy in proxyCollection.Proxies)
+        const int parallelism = 100; 
+        await Parallel.ForEachAsync(
+            proxyCollection.Proxies, 
+            new ParallelOptions { MaxDegreeOfParallelism = parallelism }, 
+            async (proxy, _) =>
         {
             if (IsProxyWorking(proxy))
             {
                 AddProxyInCollection(proxyCollectionFiltered, proxy);
             }
-        }
+        });
         return proxyCollectionFiltered;
     }
 

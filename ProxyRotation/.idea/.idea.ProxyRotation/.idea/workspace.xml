@@ -9,6 +9,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d135166d-91ad-46a2-a28b-a8628686e955" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.ProxyRotation/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ProxyRotation/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/04-Domain/Manager/ProxyManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/04-Domain/Manager/ProxyManager.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -108,6 +109,7 @@
       <workItem from="1740679196438" duration="280000" />
       <workItem from="1740679484633" duration="1005000" />
       <workItem from="1740833327518" duration="12777000" />
+      <workItem from="1740935008352" duration="1047000" />
     </task>
     <servers />
   </component>
