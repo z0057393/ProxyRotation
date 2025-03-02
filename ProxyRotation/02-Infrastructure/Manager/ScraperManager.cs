@@ -13,7 +13,8 @@ public class ScraperManager : IScraperManager
 
     private async Task<ProxyCollection> GetAsync()
     {
-        string url = "https://proxylist.geonode.com/api/proxy-list?limit=500&page=1&sort_by=lastChecked&sort_type=desc";
+        // string url = "https://proxylist.geonode.com/api/proxy-list?limit=500&page=1&sort_by=lastChecked&sort_type=desc";
+        string url = "https://api.proxyscrape.com/v4/free-proxy-list/get?request=display_proxies&proxy_format=protocolipport&format=json";
         using HttpClient client = new();
         HttpResponseMessage response = await client.GetAsync(url);
         
