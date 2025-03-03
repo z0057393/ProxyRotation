@@ -15,12 +15,16 @@ public class ProxyManager : IProxyManager
         return CheckProxyCollection(proxyCollection).GetAwaiter().GetResult();
     }
 
+    public void Rotate(ProxyCollection proxyCollection, string url)
+    {
+        
+    }
+
     #endregion
 
 
     #region PRIVATE METHOD
 
-    //Super lent, surement un pb
     private async Task<ProxyCollection> CheckProxyCollection(ProxyCollection proxyCollection)
     {
         ProxyCollection proxyCollectionFiltered = new();
@@ -37,7 +41,6 @@ public class ProxyManager : IProxyManager
         });
         return proxyCollectionFiltered;
     }
-
     private  bool IsProxyWorking(Proxy proxy)
     {
         Ping ping = new Ping();
@@ -56,7 +59,6 @@ public class ProxyManager : IProxyManager
     {
         return proxy.Ip ;
     }
-
     private void AddProxyInCollection(ProxyCollection proxyCollection, Proxy proxy)
     {
         proxyCollection.Proxies.Add(proxy);

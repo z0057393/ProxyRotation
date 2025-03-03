@@ -5,4 +5,5 @@ namespace ProxyRotation.Domain.Interface;
 public interface IProxyManager
 {
     public ProxyCollection Validate(ProxyCollection proxyCollection);
+    public void Rotate(ProxyCollection proxyCollection, string url);
 }
