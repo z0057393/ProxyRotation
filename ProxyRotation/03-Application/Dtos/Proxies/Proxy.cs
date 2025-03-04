@@ -1,6 +1,6 @@
 using Newtonsoft.Json;
 
-namespace ProxyRotation.Infrastructure.Dtos.Proxies;
+namespace ProxyRotation.Application.Dtos.Proxies;
 
 public class Proxy
 {

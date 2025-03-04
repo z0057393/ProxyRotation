@@ -1,8 +1,6 @@
-using System.Diagnostics;
 using System.Net.NetworkInformation;
-using System.Text;
 using ProxyRotation.Domain.Interface;
-using ProxyRotation.Infrastructure.Dtos.Proxies;
+using ProxyRotation.Application.Dtos.Proxies;
 
 namespace ProxyRotation.Domain.Manager;
 
@@ -10,9 +8,14 @@ public class ProxyManager : IProxyManager
 {
     #region PUBLIC METHOD
 
-    public ProxyCollection Validate(ProxyCollection proxyCollection)
+    public bool Validate(Proxy proxy)
     {
-        return CheckProxyCollection(proxyCollection).GetAwaiter().GetResult();
+        return CheckProxy(proxy);
+    }
+
+    public void Rotate(Proxy proxy, string url)
+    {
+        throw new NotImplementedException();
     }
 
     #endregion
@@ -20,24 +23,10 @@ public class ProxyManager : IProxyManager
 
     #region PRIVATE METHOD
 
-    //Super lent, surement un pb
-    private async Task<ProxyCollection> CheckProxyCollection(ProxyCollection proxyCollection)
+    private bool CheckProxy(Proxy proxy)
     {
-        ProxyCollection proxyCollectionFiltered = new();
-        const int parallelism = 100; 
-        await Parallel.ForEachAsync(
-            proxyCollection.Proxies, 
-            new ParallelOptions { MaxDegreeOfParallelism = parallelism }, 
-            async (proxy, _) =>
-        {
-            if (IsProxyWorking(proxy))
-            {
-                AddProxyInCollection(proxyCollectionFiltered, proxy);
-            }
-        });
-        return proxyCollectionFiltered;
+        return IsProxyWorking(proxy);
     }
-
     private  bool IsProxyWorking(Proxy proxy)
     {
         Ping ping = new Ping();
@@ -55,11 +44,6 @@ public class ProxyManager : IProxyManager
     private string BuildProxyAddress(Proxy proxy)
     {
         return proxy.Ip ;
-    }
-
-    private void AddProxyInCollection(ProxyCollection proxyCollection, Proxy proxy)
-    {
-        proxyCollection.Proxies.Add(proxy);
     }
 
     #endregion

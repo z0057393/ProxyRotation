@@ -1,22 +1,15 @@
 ﻿using ProxyRotation.Application.Interface;
-using ProxyRotation.Domain.Interface;
-using ProxyRotation.Infrastructure.Dtos.Proxies;
-using ProxyRotation.Infrastructure.Interface;
 
 namespace ProxyRotation.Application.Service
 {
     public class ProxyRotationService (
-        
-        IScraperService _scraperService,
-        IProxyService _proxyService
-        
+        IProxyRotationManager _proxyRotationManager
+    
         ) : IProxyRotationService
     {
-        public void Rotate()
+        public void Rotate(string url)
         {
-            ProxyCollection proxyCollection = _scraperService.Scrape();
-            _proxyService.Validate(proxyCollection);
-            // _proxyService.Rotate();
+            _proxyRotationManager.Rotate(url);
         }
     }
 }

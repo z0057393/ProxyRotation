@@ -1,4 +1,4 @@
-using ProxyRotation.Infrastructure.Dtos.Proxies;
+using ProxyRotation.Application.Dtos.Proxies;
 
 namespace ProxyRotation.Infrastructure.Interface;
 

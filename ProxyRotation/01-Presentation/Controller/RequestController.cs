@@ -5,7 +5,6 @@ using ProxyRotation.Application.Interface;
 namespace ProxyRotation.Presentation
 {
     [ApiController]
-    [Route("/Request")]
     public class RequestController(IProxyRotationService _proxyRotationService) : ControllerBase
     {
         [HttpGet]
@@ -14,13 +13,12 @@ namespace ProxyRotation.Presentation
         {
             return Ok("I'm alive boss");
         }
-
-
+        
         [HttpPost]
-        [Route("/")]
+        [Route("/Rotate")]
         public IActionResult DoRotation([FromBody] RequestDto req)
         {
-            _proxyRotationService.Rotate();
+            _proxyRotationService.Rotate(req.url);
             return Ok();
         }
     }
