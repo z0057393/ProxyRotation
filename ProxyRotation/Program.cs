@@ -1,3 +1,4 @@
+using ProxyRotation.Application.Manager;
 using ProxyRotation.Application.Interface;
 using ProxyRotation.Application.Service;
 using ProxyRotation.Domain.Interface;
@@ -18,6 +19,7 @@ builder.Services.AddSwaggerGen();
 
 
 builder.Services.AddTransient<IProxyRotationService, ProxyRotationService>();
+builder.Services.AddSingleton<IProxyRotationManager, ProxyRotationManager>();
 builder.Services.AddTransient<IProxyService, ProxyService>();
 builder.Services.AddTransient<IProxyManager, ProxyManager>();
 builder.Services.AddTransient<IScraperService, ScraperService>();

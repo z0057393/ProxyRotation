@@ -1,9 +1,9 @@
-using ProxyRotation.Infrastructure.Dtos.Proxies;
+using ProxyRotation.Application.Dtos.Proxies;
 
 namespace ProxyRotation.Domain.Interface;
 
 public interface IProxyManager
 {
-    public ProxyCollection Validate(ProxyCollection proxyCollection);
-    public void Rotate(ProxyCollection proxyCollection, string url);
+    public bool Validate(Proxy proxy);
+    public void Rotate(Proxy proxy, string url);
 }

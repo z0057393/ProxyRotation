@@ -2,6 +2,6 @@
 {
     public interface IProxyRotationService
     {
-        void Rotate();
+        public void Rotate(string url);
     }
 }
