@@ -1,17 +1,20 @@
 ﻿using ProxyRotation.Domain.Interface;
-using ProxyRotation.Infrastructure.Dtos.Proxies;
+using ProxyRotation.Application.Dtos.Proxies;
 
 namespace ProxyRotation.Domain.Service
 {
-    public class ProxyService (IProxyManager _proxyManager): IProxyService
+    public class ProxyService (
+        IProxyManager _proxyManager
+        ): IProxyService
     {
-        public void Validate(ProxyCollection proxyCollection)
+        public bool Validate(Proxy proxy)
         {
-            _proxyManager.Validate(proxyCollection);
+            return _proxyManager.Validate(proxy);
         }
-        public void Rotate()
+
+        public void Rotate(Proxy proxy, string url)
         {
-            throw new NotImplementedException();
+            _proxyManager.Rotate(proxy, url);
         }
     }
 }
