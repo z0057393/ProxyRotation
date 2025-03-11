@@ -1,10 +1,11 @@
 ﻿using ProxyRotation.Domain.Interface;
 using ProxyRotation.Application.Dtos.Proxies;
+using ProxyRotation.Domain.Manager;
 
 namespace ProxyRotation.Domain.Service
 {
     public class ProxyService (
-        IProxyManager _proxyManager
+        ProxyManager _proxyManager
         ): IProxyService
     {
         public bool Validate(Proxy proxy)

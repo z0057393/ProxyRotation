@@ -8,7 +8,7 @@ namespace ProxyRotation.Application.Manager;
 public class ProxyRotationManager(
     IScraperService _scraperService,
     IProxyService _proxyService
-) : IProxyRotationManager
+) 
 {
     ProxyCollection proxyCollection { get; set; }
 

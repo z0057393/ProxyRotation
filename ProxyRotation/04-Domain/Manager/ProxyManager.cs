@@ -5,7 +5,7 @@ using ProxyRotation.Application.Dtos.Proxies;
 
 namespace ProxyRotation.Domain.Manager;
 
-public class ProxyManager : IProxyManager
+public class ProxyManager 
 {
     #region PUBLIC METHOD
 

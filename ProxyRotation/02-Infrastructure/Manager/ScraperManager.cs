@@ -4,7 +4,7 @@ using Newtonsoft.Json;
 
 namespace ProxyRotation.Infrastructure.Manager;
 
-public class ScraperManager : IScraperManager
+public class ScraperManager 
 {
     public async Task<ProxyCollection> ScrapeIpProxy()
     {
