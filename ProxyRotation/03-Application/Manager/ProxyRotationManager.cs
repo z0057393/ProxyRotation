@@ -1,5 +1,4 @@
 using ProxyRotation.Application.Dtos.Proxies;
-using ProxyRotation.Application.Interface;
 using ProxyRotation.Domain.Interface;
 using ProxyRotation.Infrastructure.Interface;
 

@@ -1,6 +1,5 @@
 using System.Net;
 using System.Net.NetworkInformation;
-using ProxyRotation.Domain.Interface;
 using ProxyRotation.Application.Dtos.Proxies;
 
 namespace ProxyRotation.Domain.Manager;

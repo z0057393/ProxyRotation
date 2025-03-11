@@ -1,4 +1,4 @@
-namespace ProxyRotation._01_Presentation.Dto;
+namespace ProxyRotation.Presentation.Dto;
 
 public class RequestDto
 { 
