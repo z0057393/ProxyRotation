@@ -18,8 +18,7 @@ namespace ProxyRotation.Presentation
         [Route("/Rotate")]
         public IActionResult DoRotation([FromBody] RequestDto req)
         {
-            _proxyRotationService.Rotate(req.url);
-            return Ok();
+            return Ok(_proxyRotationService.Rotate(req.url));
         }
     }
 } 

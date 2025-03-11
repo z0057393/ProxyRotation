@@ -1,3 +1,4 @@
+using System.Net;
 using System.Net.NetworkInformation;
 using ProxyRotation.Domain.Interface;
 using ProxyRotation.Application.Dtos.Proxies;
@@ -13,9 +14,32 @@ public class ProxyManager : IProxyManager
         return CheckProxy(proxy);
     }
 
-    public void Rotate(Proxy proxy, string url)
+    public async Task<string> Rotate(Proxy proxyInfo, string url)
     {
-        throw new NotImplementedException();
+        var proxy = new WebProxy(proxyInfo.Protocol + "://" + proxyInfo.Ip + ":" + proxyInfo.Port);
+        var handler = new HttpClientHandler
+        {
+            Proxy = proxy,
+            UseProxy = true
+        };
+
+        try
+        {
+            using (var client = new HttpClient(handler))
+            {
+                client.Timeout = TimeSpan.FromSeconds(2);
+                var response = await client.GetAsync(url);
+                response.EnsureSuccessStatusCode();
+            
+                return await response.Content.ReadAsStringAsync();
+            }
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+            throw;
+        }
+       
     }
 
     #endregion
@@ -27,7 +51,8 @@ public class ProxyManager : IProxyManager
     {
         return IsProxyWorking(proxy);
     }
-    private  bool IsProxyWorking(Proxy proxy)
+
+    private bool IsProxyWorking(Proxy proxy)
     {
         Ping ping = new Ping();
         try
@@ -41,9 +66,10 @@ public class ProxyManager : IProxyManager
             return false;
         }
     }
+
     private string BuildProxyAddress(Proxy proxy)
     {
-        return proxy.Ip ;
+        return proxy.Ip;
     }
 
     #endregion

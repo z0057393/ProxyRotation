@@ -7,9 +7,9 @@ namespace ProxyRotation.Application.Service
     
         ) : IProxyRotationService
     {
-        public void Rotate(string url)
+        public string Rotate(string url)
         {
-            _proxyRotationManager.Rotate(url);
+           return _proxyRotationManager.Rotate(url);
         }
     }
 }

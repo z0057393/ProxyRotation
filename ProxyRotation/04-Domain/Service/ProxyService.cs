@@ -12,9 +12,9 @@ namespace ProxyRotation.Domain.Service
             return _proxyManager.Validate(proxy);
         }
 
-        public void Rotate(Proxy proxy, string url)
+        public string Rotate(Proxy proxy, string url)
         {
-            _proxyManager.Rotate(proxy, url);
+            return _proxyManager.Rotate(proxy, url).GetAwaiter().GetResult();
         }
     }
 }

@@ -14,32 +14,50 @@ public class ProxyRotationManager(
 
     #region PUBLIC METHODS
 
-    public void Rotate(string url)
+    public string Rotate(string url)
     {
-        ExecuteWithProxy(url);
+        return ExecuteWithProxy(url);
     }
 
     #endregion
 
     #region PRIVATE METHODS
 
-    private void ExecuteWithProxy(string url)
+    private string ExecuteWithProxy(string url)
     {
+        string response = string.Empty;
         ValidateProxyCollection();
         Proxy proxy = proxyCollection.Next();
         Validate(proxy, url);
-        _proxyService.Rotate(proxy, url);
+        try
+        {
+           response = _proxyService.Rotate(proxy, url);
+           Remove(proxy);
+        }
+        catch (Exception e)
+        {
+            Remove(proxy);
+            ExecuteWithProxy(url);
+
+        }
+
+        return response;
     }
 
     private void Validate(Proxy proxy, string url)
     {
         if (!_proxyService.Validate(proxy))
         {
-            proxyCollection.Remove(proxy);
-            ExecuteWithProxy(url);
+           Remove(proxy);
+           ExecuteWithProxy(url);
+
         }
     }
 
+    private void Remove(Proxy proxy)
+    {
+        proxyCollection.Remove(proxy);
+    }
     private void ValidateProxyCollection()
     {
         if (ProxyCollectionIsNullOrEmpty())
