@@ -10,3 +10,7 @@ ProxyRotation/obj/
 *.csproj
 
 ProxyRotation/.idea/.idea.ProxyRotation/.idea/
+
+.DS_Store
+
+TestUnitaire/obj/
