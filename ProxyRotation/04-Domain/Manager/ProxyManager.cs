@@ -4,7 +4,7 @@ using ProxyRotation.Application.Dtos.Proxies;
 
 namespace ProxyRotation.Domain.Manager;
 
-public class ProxyManager 
+public class ProxyManager
 {
     #region PUBLIC METHOD
 
@@ -13,38 +13,40 @@ public class ProxyManager
         return CheckProxy(proxy);
     }
 
-    public async Task<string> Rotate(Proxy proxyInfo, string url)
+    public Task<string> Rotate(Proxy proxyInfo, string url)
     {
-        var proxy = new WebProxy(proxyInfo.Protocol + "://" + proxyInfo.Ip + ":" + proxyInfo.Port);
-        var handler = new HttpClientHandler
-        {
-            Proxy = proxy,
-            UseProxy = true
-        };
-
-        try
-        {
-            using (var client = new HttpClient(handler))
-            {
-                client.Timeout = TimeSpan.FromSeconds(2);
-                var response = await client.GetAsync(url);
-                response.EnsureSuccessStatusCode();
-            
-                return await response.Content.ReadAsStringAsync();
-            }
-        }
-        catch (Exception e)
-        {
-            Console.WriteLine(e);
-            throw;
-        }
-       
+       return ExecuteHttpRequest(proxyInfo, url);
     }
 
     #endregion
 
 
     #region PRIVATE METHOD
+
+    private async Task<string> ExecuteHttpRequest(Proxy proxyInfo, string url)
+    {
+        using (var client = new HttpClient(GetHttpClientHandler(proxyInfo)))
+        {
+            client.Timeout = TimeSpan.FromSeconds(2);
+            var response = await client.GetAsync(url);
+            response.EnsureSuccessStatusCode();
+
+            return await response.Content.ReadAsStringAsync();
+        }
+    }
+    private HttpClientHandler GetHttpClientHandler(Proxy proxyInfo)
+    {
+        return new HttpClientHandler
+        {
+            Proxy = GetWebProxy(proxyInfo),
+            UseProxy = true
+        };
+    }
+
+    private WebProxy GetWebProxy(Proxy proxyInfo)
+    {
+        return new WebProxy(proxyInfo.Protocol + "://" + proxyInfo.Ip + ":" + proxyInfo.Port);
+    }
 
     private bool CheckProxy(Proxy proxy)
     {
