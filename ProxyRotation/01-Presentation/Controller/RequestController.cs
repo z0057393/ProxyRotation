@@ -1,5 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using ProxyRotation._01_Presentation.Dto;
+using ProxyRotation.Presentation.Dto;
 using ProxyRotation.Application.Interface;
 
 namespace ProxyRotation.Presentation

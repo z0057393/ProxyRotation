@@ -1,5 +1,4 @@
 using ProxyRotation.Application.Dtos.Proxies;
-using ProxyRotation.Application.Interface;
 using ProxyRotation.Domain.Interface;
 using ProxyRotation.Infrastructure.Interface;
 
@@ -8,7 +7,7 @@ namespace ProxyRotation.Application.Manager;
 public class ProxyRotationManager(
     IScraperService _scraperService,
     IProxyService _proxyService
-) : IProxyRotationManager
+) 
 {
     ProxyCollection proxyCollection { get; set; }
 

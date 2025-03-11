@@ -1,9 +1,10 @@
 ﻿using ProxyRotation.Application.Interface;
+using ProxyRotation.Application.Manager;
 
 namespace ProxyRotation.Application.Service
 {
     public class ProxyRotationService (
-        IProxyRotationManager _proxyRotationManager
+        ProxyRotationManager _proxyRotationManager
     
         ) : IProxyRotationService
     {

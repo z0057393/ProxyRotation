@@ -19,11 +19,11 @@ builder.Services.AddSwaggerGen();
 
 
 builder.Services.AddTransient<IProxyRotationService, ProxyRotationService>();
-builder.Services.AddSingleton<IProxyRotationManager, ProxyRotationManager>();
+builder.Services.AddTransient<ProxyRotationManager>();
 builder.Services.AddTransient<IProxyService, ProxyService>();
-builder.Services.AddTransient<IProxyManager, ProxyManager>();
+builder.Services.AddTransient<ProxyManager>();
 builder.Services.AddTransient<IScraperService, ScraperService>();
-builder.Services.AddTransient<IScraperManager, ScraperManager>();
+builder.Services.AddTransient<ScraperManager>();
 builder.Services.AddSingleton<ILoadConfigurationService, LoadConfigurationService>();
 
 
